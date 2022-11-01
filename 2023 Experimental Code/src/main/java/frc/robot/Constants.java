@@ -12,19 +12,15 @@ package frc.robot;
  * <p>It is advised to statically import this class (or one of its inner classes) wherever the
  * constants are needed, to reduce verbosity.
  */
+
 public final class Constants {
 
-<<<<<<< HEAD
-    public static final int[] MOTOR_PORT_LEFT = {1,2};
-    public static final int[] MOTOR_PORT_RIGHT = {3,4};
-    
-=======
         //Drive Motors
         public static final int[] MOTOR_PORTS_LEFT = {1, 2};
         public static final int[] MOTOR_PORTS_RIGHT = {3, 4};
         public static final boolean LEFT_INVERTED = true;
         public static final double RAMP_RATE = 0.5;
-        public static final double WHEEL_CIRCUMFERENCE = 6*Math.PI;
+        public static final double WHEEL_CIRCUMFERENCE = 6 * Math.PI;
         public static final int[] SHIFT_PISTON_PORTS = {2, 3, 0};
     
         //Drive Constants
@@ -32,14 +28,14 @@ public final class Constants {
         public static final double ENCODER_GEAR_RATIO = 1;
         public static final int ENCODER_PULSES_PER_REVOLUTION = 2048;
         public static final int VELOCITY_CALCULATION_PER_SECOND = 10;
-        public static final double distancePerPulse = WHEEL_CIRCUMFERENCE/(double) ENCODER_PULSES_PER_REVOLUTION;
+        public static final double DISTANCE_PER_PULSE = WHEEL_CIRCUMFERENCE / (double)ENCODER_PULSES_PER_REVOLUTION;
     
-        public static final double low = 21.67;
-        public static final double high = 8.41;
+        public static final double LOW = 21.67;
+        public static final double HIGH = 8.41;
     
         public static final int JOYSTICK_PORT_LEFT = 0;
         public static final int JOYSTICK_PORT_RIGHT = 1;
         public static final double JOYSTICK_LEFT_DEADZONE_Y = 0.02;
         public static final double JOYSTICK_RIGHT_DEADZONE_Y = 0.02;
->>>>>>> 7f0853c30852524f892ecf252e868f6a4bb1e9bc
+        public static final int XBOX_PORT = 2;
 }
