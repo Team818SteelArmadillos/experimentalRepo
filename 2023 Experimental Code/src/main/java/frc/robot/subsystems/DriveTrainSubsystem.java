@@ -22,5 +22,5 @@ public class DriveTrainSubsystem extends SubsystemBase {
       motors[2].set(ControlMode.PercentOutput, rightSpeed);//sets the first right motor to rightspeed
       motors[3].follow(motors[2]);
   }
-  
+
 }
