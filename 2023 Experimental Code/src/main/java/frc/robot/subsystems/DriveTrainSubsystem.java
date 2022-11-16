@@ -20,10 +20,11 @@ public class DriveTrainSubsystem extends SubsystemBase {
   static VictorSPX leftMotorTwo = new VictorSPX(Constants.MOTOR_PORTS_LEFT[1]);
 
   public void setMotorSpeed(double leftSpeed, double rightSpeed){
-      rightMotorOne.set(ControlMode.PercentOutput, leftSpeed); //sets the first left motor to leftspeed
+      rightMotorOne.set(ControlMode.PercentOutput, rightSpeed); //sets the first left motor to leftspeed
       rightMotorTwo.follow(rightMotorOne);
-      leftMotorOne.set(ControlMode.PercentOutput, rightSpeed);//sets the first right motor to rightspeed
+      leftMotorOne.set(ControlMode.PercentOutput, leftSpeed);//sets the first right motor to rightspeed
       leftMotorTwo.follow(leftMotorOne);
   }
+  
 
 }
