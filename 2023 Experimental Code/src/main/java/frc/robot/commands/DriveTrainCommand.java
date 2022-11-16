@@ -4,32 +4,37 @@
 
 package frc.robot.commands;
 
+import frc.robot.OI;
 import frc.robot.subsystems.DriveTrainSubsystem;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
 /** An example command that uses an example subsystem. */
-public class ExampleCommand extends CommandBase {
+public class DriveTrainCommand extends CommandBase {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
-  private final DriveTrainSubsystem m_subsystem;
+  private final DriveTrainSubsystem m_DriveTrainSubsystem;
+  private final OI m_oi;
 
   /**
    * Creates a new ExampleCommand.
    *
    * @param subsystem The subsystem used by this command.
    */
-  public ExampleCommand(DriveTrainSubsystem subsystem) {
-    m_subsystem = subsystem;
-    // Use addRequirements() here to declare subsystem dependencies.
-    addRequirements(subsystem);
+  public DriveTrainCommand() {
+    m_DriveTrainSubsystem = new DriveTrainSubsystem();
+    m_oi = new OI();
   }
 
   // Called when the command is initially scheduled.
   @Override
-  public void initialize() {}
+  public void initialize() {
+    m_DriveTrainSubsystem.setMotorSpeed(0, 0);
+  }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {}
+  public void execute() {
+    m_DriveTrainSubsystem.setMotorSpeed(m_oi.getleftYAxis(), m_oi.getrightYAxis());
+  }
 
   // Called once the command ends or is interrupted.
   @Override
