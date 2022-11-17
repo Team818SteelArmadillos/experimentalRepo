@@ -8,99 +8,139 @@ import static frc.robot.Constants.*;
 
 public class OI {
 
-    Joystick leftJoyStick, rightJoyStick;
-    XboxController  gamePad, gamePadDriver;
+    private static Joystick leftJoyStick, rightJoyStick;
+    private static XboxController gamePad, gamePadDriver;
 
-    JoystickButton intakeButton;
-    JoystickButton elevatorButton;
+    private static JoystickButton intakeButton;
+    private static JoystickButton elevatorButton;
 
-    public OI() {
+    public OI () {
+      leftJoyStick = new Joystick(leftJoystickPort);
+      rightJoyStick = new Joystick(rightJoystickPort);
+      gamePad = new XboxController(gamePadPort);
+      gamePadDriver = new XboxController(gamePadDriverPort);
+      elevatorButton = new JoystickButton(gamePad, 7);
+    }
 
-    leftJoyStick = new Joystick(leftJoystickPort);
-    rightJoyStick = new Joystick(rightJoystickPort);
-    gamePad = new XboxController(gamePadPort);
-    gamePadDriver = new XboxController(gamePadDriverPort);
-    elevatorButton = new JoystickButton(gamePad, 7);
-
-}
-
-      public boolean getElevatorUp() {
+      public static boolean getElevatorUp() {
         return (gamePad.getPOV() == 0);
       }
 
-      public boolean getElevatorDown() {
+      public static boolean getElevatorDown() {
         return (gamePad.getPOV() == 180);
       }
 
-      public boolean getElevatorOut(){
+      public static boolean getElevatorOut(){
         return (gamePad.getPOV() == 270);
       }
 
-      public boolean getElevatorIn(){
+      public static boolean getElevatorIn(){
         return (gamePad.getPOV() == 90);
       }
 
-      public boolean getXButton() {
+      public static boolean getXButton() {
         return gamePad.getXButton();
       }    
 
-      public boolean getYButton() {
+      public static boolean getYButton() {
         return gamePad.getYButton();
       }
 
-      public boolean getAButton() {
+      public static boolean getAButton() {
         return gamePad.getAButton();
       }
 
-      public boolean getBButton() {
+      public static boolean getBButton() {
         return gamePad.getBButton();
       }
 
-      public boolean getLeftBumper() {
+      public static boolean getLeftBumper() {
         return gamePad.getRawButtonPressed(5);
       }
 
-      public boolean getRightBumper() {
+      public static boolean getRightBumper() {
         return gamePad.getRawButtonPressed(6);
       }
 
-      public boolean getRightTrigger() {
+      public static boolean getRightTrigger() {
         return gamePad.getRawButtonPressed(3);
       }
 
-      public boolean getLeftTrigger() {
+      public static boolean getLeftTrigger() {
         return gamePad.getRawButtonPressed(2);
       }
 
-      public double getleftYAxis() {
+      public static double getRightTriggerAxis() {
+        return gamePad.getRightTriggerAxis();
+      }
+
+      public static double getLeftTriggerAxis() {
+        return gamePad.getLeftTriggerAxis();
+      }
+
+      public static double getRightAxisX() {
+        return gamePad.getRightX();
+      }
+
+      public static double getRightAxisY() {
+        return gamePad.getRightY();
+      }
+
+      public static double getLeftAxisX() {
+        return gamePad.getLeftX();
+      }
+
+      public static double getLeftAxisY() {
+        return gamePad.getLeftY();
+      }
+
+
+      /**
+      * Retrieves the left joystick Y axis
+      * 
+      * <p> Joystick Y axis
+      */
+      public static double getleftYAxis() {
         // return Math.pow(-leftJoyStick.getY(), 3.0);
         return leftJoyStick.getY();
         // // return Math.pow(-gamePadDriver.getLeftY(), 3.0);
         //return gamePadDriver.getLeftY();
       }
-    
-      public double getrightYAxis() {
+      /**
+      * Retrieves the right joystick Y axis
+      * 
+      * <p> Joystick Y axis
+      */
+      public static double getrightYAxis() {
         // return Math.pow(rightJoyStick.getY(), 3.0);
         return rightJoyStick.getY();
         // // return Math.pow(gamePadDriver.getRightY(), 3.0);
         // return gamePadDriver.getRightY();
       }
-    
-      public double getleftXAxis() {
+      /**
+      * Retrieves the left joystick X axis
+      * 
+      * <p> Joystick X axis
+      */
+      public static double getleftXAxis() {
         // return Math.pow(-rightJoyStick.getX(), 3.0);
         return leftJoyStick.getX();
         // // return Math.pow(-gamePadDriver.getLeftX(), 3.0);
         // return gamePadDriver.getLeftX();
       }
-      
-      public double getrightXAxis() {
+      /**
+      * Retrieves the right joystick X axis
+      * 
+      * <p> Joystick X axis
+      */
+      public static double getrightXAxis() {
         // return Math.pow(-rightJoyStick.getX(), 3.0);
         return rightJoyStick.getX();
         // // return Math.pow(-gamePadDriver.getRightX(), 3.0);
         // return gamePadDriver.getRightX();
       }
 
-      public boolean shiftGears(){
-      return (rightJoyStick.getRawButton(2));
+      public static boolean shiftGears(){
+        return (rightJoyStick.getRawButton(2));
       }
     }
