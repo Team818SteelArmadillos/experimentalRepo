@@ -19,7 +19,7 @@ public class DriveTrainSubsystem extends SubsystemBase {
   static TalonSRX leftMotorOne = new TalonSRX(Constants.MOTOR_PORTS_LEFT[0]);
   static VictorSPX leftMotorTwo = new VictorSPX(Constants.MOTOR_PORTS_LEFT[1]);
 
-  public void setMotorSpeed(double leftSpeed, double rightSpeed){
+  public static void setMotorSpeed(double leftSpeed, double rightSpeed){
       rightMotorOne.set(ControlMode.PercentOutput, rightSpeed); //sets the first left motor to leftspeed
       rightMotorTwo.follow(rightMotorOne);
       leftMotorOne.set(ControlMode.PercentOutput, leftSpeed);//sets the first right motor to rightspeed

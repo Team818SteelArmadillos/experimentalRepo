@@ -11,8 +11,8 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 /** An example command that uses an example subsystem. */
 public class DriveTrainCommand extends CommandBase {
   
-  private final DriveTrainSubsystem m_DriveTrainSubsystem;
-  private final OI m_oi;
+  //private final DriveTrainSubsystem m_DriveTrainSubsystem;
+  //private final OI m_oi;
 
   /**
    * Creates a new ExampleCommand.
@@ -20,20 +20,20 @@ public class DriveTrainCommand extends CommandBase {
    * @param subsystem The subsystem used by this command.
    */
   public DriveTrainCommand() {
-    m_DriveTrainSubsystem = new DriveTrainSubsystem();
-    m_oi = new OI();
+    //m_DriveTrainSubsystem = new DriveTrainSubsystem();
+    //m_oi = new OI();
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    m_DriveTrainSubsystem.setMotorSpeed(0, 0);
+    DriveTrainSubsystem.setMotorSpeed(0, 0);
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    m_DriveTrainSubsystem.setMotorSpeed(m_oi.getleftYAxis(), m_oi.getrightYAxis());
+    DriveTrainSubsystem.setMotorSpeed(OI.getleftYAxis(), OI.getrightYAxis());
   }
 
   // Called once the command ends or is interrupted.
