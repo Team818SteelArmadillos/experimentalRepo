@@ -14,7 +14,8 @@ public class OI {
     private static JoystickButton intakeButton;
     private static JoystickButton elevatorButton;
 
-    public OI () {
+    //public OI () 
+    static { // why don't we have a name for the method?
       leftJoyStick = new Joystick(leftJoystickPort);
       rightJoyStick = new Joystick(rightJoystickPort);
       gamePad = new XboxController(gamePadPort);
