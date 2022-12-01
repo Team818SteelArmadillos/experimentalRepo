@@ -34,7 +34,7 @@ public class DriveTrainCommand extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    DriveTrainSubsystem.setMotorSpeed(gamePad.getLeftY(), gamePad.getRightY());
+    DriveTrainSubsystem.setMotorSpeed(gamePad.getLeftY(), -gamePad.getRightY());
   }
 
   // Called once the command ends or is interrupted.
