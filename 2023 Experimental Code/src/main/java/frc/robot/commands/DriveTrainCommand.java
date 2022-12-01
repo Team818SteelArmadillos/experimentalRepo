@@ -4,14 +4,15 @@
 
 package frc.robot.commands;
 
-import frc.robot.OI;
+import frc.robot.Constants;
 import frc.robot.subsystems.DriveTrainSubsystem;
+import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
 /** An example command that uses an example subsystem. */
 public class DriveTrainCommand extends CommandBase {
   
-  //private final DriveTrainSubsystem m_DriveTrainSubsystem;
+  public static XboxController gamePad = new XboxController(Constants.gamePadPort);
   //private final OI m_oi;
 
   /**
@@ -33,7 +34,7 @@ public class DriveTrainCommand extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    DriveTrainSubsystem.setMotorSpeed(OI.getleftYAxis(), OI.getrightYAxis());
+    DriveTrainSubsystem.setMotorSpeed(gamePad.getLeftY(), gamePad.getRightY());
   }
 
   // Called once the command ends or is interrupted.
