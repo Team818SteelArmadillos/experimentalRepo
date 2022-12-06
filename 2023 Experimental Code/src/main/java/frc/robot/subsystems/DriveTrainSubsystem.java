@@ -33,15 +33,15 @@ public class DriveTrainSubsystem extends SubsystemBase {
   }
 
   // DRIVESYSTEMS //
-  public static void RLDrive(double vel, double turnSpeed, bool reverse) {
+  public static void RLDrive(double vel, double turnSpeed) {
     // Curve throttle speed????? // FIGURE THIS OUT LATER //
-    fSpeed = Math.pow(fSpeed, 3);
+    vel = Math.pow(vel, 3);
 
     // Calculate turn power
-    double turnPower = tSpeed * fSpeed;
+    double turnPower = turnSpeed * vel;
 
-    double rPower = fSpeed - turnPower;
-    double lPower = fSpeed + turnPower;
+    double rPower = vel - turnPower;
+    double lPower = vel + turnPower;
 
     setMotorSpeed(rPower, lPower);
   }

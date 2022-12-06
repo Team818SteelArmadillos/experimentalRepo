@@ -4,7 +4,6 @@
 
 package frc.robot.commands;
 
-import frc.robot.Constants;
 import frc.robot.OI;
 import frc.robot.subsystems.DriveTrainSubsystem;
 import edu.wpi.first.wpilibj2.command.CommandBase;
@@ -29,7 +28,7 @@ public class DriveTrainCommand extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    DriveTrainSubsystem.setMotorSpeed(-OI.getXbox().getRightY(), OI.getXbox().getLeftY());
+    DriveTrainSubsystem.RLDrive(OI.getXbox().getRightTriggerAxis(), OI.getXbox().getLeftX());
   }
 
   // Called once the command ends or is interrupted.
