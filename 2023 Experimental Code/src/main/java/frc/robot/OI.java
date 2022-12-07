@@ -39,11 +39,11 @@ public class OI {
         return (gamePad.getPOV() == 90);
       }
 
-      public boolean getXButton() {
+      public static boolean getXButton() {
         return gamePad.getXButton();
       }    
 
-      public boolean getYButton() {
+      public static boolean getYButton() {
         return gamePad.getYButton();
       }
 
@@ -51,7 +51,7 @@ public class OI {
         return gamePad.getAButton();
       }
 
-      public boolean getBButton() {
+      public static boolean getBButton() {
         return gamePad.getBButton();
       }
 
@@ -93,30 +93,6 @@ public class OI {
 
       public static double getLeftAxisY() {
         return gamePad.getLeftY();
-      }
-
-      public boolean getYButtonPressed() {
-        return getYButtonPressed();
-      }
-
-      public boolean getXButtonPressed() {
-        return getXButtonPressed();
-      }
-
-      public boolean getBButtonPressed() {
-        return getBButtonPressed();
-      }
-
-      public boolean getAButtonPressed() {
-        return getAButtonPressed();
-      }
-
-      public boolean getLeftBumperPressed() {
-        return gamePad.getLeftBumperPressed();
-      }
-
-      public boolean getRightBumperPressed() {
-        return gamePad.getRightBumperPressed();
       }
 
 

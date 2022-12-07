@@ -43,12 +43,4 @@ public final class Constants {
         public static final int rightJoystickPort = 1;
         public static final int gamePadPort = 2;
         public static final int gamePadDriverPort = 3;
-        
-
-        //Elevator Constants
-        public static final int ELEVATOR_PORT = 5;
-        public static final double ELEVATOR_GEAR_RATIO = 21;
-        public static final double ELEVATOR_DISTANCE_PER_REVOLUTION = 0.24863;
-        
-
 }
