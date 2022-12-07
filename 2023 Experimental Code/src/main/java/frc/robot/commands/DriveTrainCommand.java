@@ -4,15 +4,13 @@
 
 package frc.robot.commands;
 
+import frc.robot.Constants;
 import frc.robot.OI;
 import frc.robot.subsystems.DriveTrainSubsystem;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
 /** An example command that uses an example subsystem. */
 public class DriveTrainCommand extends CommandBase {
-  
-  //private final DriveTrainSubsystem m_DriveTrainSubsystem;
-  //private final OI m_oi;
 
   /**
    * Creates a new ExampleCommand.
@@ -20,8 +18,6 @@ public class DriveTrainCommand extends CommandBase {
    * @param subsystem The subsystem used by this command.
    */
   public DriveTrainCommand() {
-    //m_DriveTrainSubsystem = new DriveTrainSubsystem();
-    //m_oi = new OI();
   }
 
   // Called when the command is initially scheduled.
@@ -33,7 +29,7 @@ public class DriveTrainCommand extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    DriveTrainSubsystem.setMotorSpeed(OI.getleftYAxis(), OI.getrightYAxis());
+    DriveTrainSubsystem.setMotorSpeed(-OI.getXbox().getRightY(), OI.getXbox().getLeftY());
   }
 
   // Called once the command ends or is interrupted.
