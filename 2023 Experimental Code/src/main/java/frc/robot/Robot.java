@@ -18,9 +18,11 @@ import frc.robot.commands.*;
  */
 public class Robot extends TimedRobot {
   private Command m_autonomousCommand;
-
-  private RobotContainer m_robotContainer;
-  public DriveTrainCommand m_driveTrainCommand;
+  public static OI m_oi;
+  private static RobotContainer m_robotContainer;
+  public static DriveTrainCommand m_driveTrainCommand;
+  public static ElevatorSubsystem m_elevatorSubsystem;
+  public static ElevatorCommand m_elevatorCommand; 
   /**
    * This function is run when the robot is first started up and should be used for any
    * initialization code.
@@ -32,6 +34,8 @@ public class Robot extends TimedRobot {
     m_robotContainer = new RobotContainer();
 
     m_driveTrainCommand = new DriveTrainCommand();
+    m_elevatorSubsystem = new ElevatorSubsystem();
+
   }
 
   /**
