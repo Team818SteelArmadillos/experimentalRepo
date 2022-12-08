@@ -16,8 +16,8 @@ package frc.robot;
 public final class Constants {
 
         //Drive Motors
-        public static final int[] MOTOR_PORTS_LEFT = {1, 2};
-        public static final int[] MOTOR_PORTS_RIGHT = {3, 4};
+        public static final int[] MOTOR_PORTS_RIGHT = {1, 2};
+        public static final int[] MOTOR_PORTS_LEFT = {3, 4};
         public static final boolean LEFT_INVERTED = true;
         public static final double RAMP_RATE = 0.5;
         public static final double WHEEL_CIRCUMFERENCE = 6 * Math.PI;
