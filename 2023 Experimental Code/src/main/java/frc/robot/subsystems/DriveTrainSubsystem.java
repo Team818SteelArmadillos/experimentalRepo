@@ -6,7 +6,6 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
-//import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 
@@ -26,10 +25,25 @@ public class DriveTrainSubsystem extends SubsystemBase {
     leftMotorTwo = new VictorSPX(Constants.MOTOR_PORTS_LEFT[1]);
   }
 
-  public static void setMotorSpeed(double leftSpeed, double rightSpeed){
+  public static void setMotorSpeed(double rightSpeed, double leftSpeed){
       rightMotorOne.set(ControlMode.PercentOutput, rightSpeed); //sets the first left motor to leftspeed
       rightMotorTwo.follow(rightMotorOne);
       leftMotorOne.set(ControlMode.PercentOutput, leftSpeed);//sets the first right motor to rightspeed
       leftMotorTwo.follow(leftMotorOne);
   }
+
+  // DRIVESYSTEMS //
+  public static void RLDrive(double vel, double turnSpeed) {
+    // Curve throttle speed????? // FIGURE THIS OUT LATER //
+    vel = Math.pow(vel, 3);
+
+    // Calculate turn power
+    double turnPower = turnSpeed * vel;
+
+    double rPower = vel - turnPower;
+    double lPower = vel + turnPower;
+
+    setMotorSpeed(rPower, lPower);
+  }
+
 }

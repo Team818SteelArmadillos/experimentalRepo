@@ -39,8 +39,8 @@ public final class Constants {
         public static final double JOYSTICK_RIGHT_DEADZONE_Y = 0.02;
         public static final int XBOX_PORT = 2;
 
-        public static final int leftJoystickPort = 0;
-        public static final int rightJoystickPort = 1;
+        //public static final int leftJoystickPort = 0;
+        //public static final int rightJoystickPort = 1;
         public static final int gamePadPort = 2;
-        public static final int gamePadDriverPort = 3;
+        //public static final int gamePadDriverPort = 3;
 }
